@@ -1,0 +1,15 @@
+.Cards{
+    width: 100%;
+}
+.Card{
+    border: 1px solid rgba(49, 3, 3, 0.296);
+    width: 90%;
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    
+}
+.Cards span{
+    margin-right:4rem ;
+}

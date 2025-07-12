@@ -1,0 +1,45 @@
+import { width } from "@mui/system";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./Order.css"
+
+const Orders = () => {
+  const [orders,setOrders] = useState([]);
+  useEffect(()=>{
+    axios.get("http://localhost:3002/allOrders").then((res)=>{
+      setOrders(res.data);
+      // console.log(res); 
+    })
+  },[])
+  return (
+    <div className="">
+      <div>
+        <p>You orders {orders.length}:-</p>
+      
+          {orders.map((item,idx)=>{
+            return(
+              <div className="Cards ">
+                <div className="Card">
+                  <h3 class="card-title">{item.name}</h3>
+                  <span  class="card-text">Qty :- {item.qty}</span>
+                  <span class="card-text">Price :- {item.price}</span>
+                  <span class="card-text">Mode :- {item.mode}</span>
+                </div>
+              </div>
+            )
+          })}
+        
+      </div>
+      <div className="no-orders">
+        <p>You haven't placed any orders today</p>
+
+        <Link to="/" className="btn">
+          Get started
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Orders;
