@@ -8,19 +8,22 @@ import { useEffect } from "react";
 
 const Home = () => {
    const [auth, setAuth] = useState(null);
-   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
-      .then((res) => {
-        if (res.data.loggedIn) {
-          setAuth(true);
-        } else {
-          window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app"; // back to login
-        }
-      })
-      .catch(() => {
-        window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
-      });
-  }, []);
+   useEffect(()=>{
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`);
+   },[])
+  //  useEffect(() => {
+  //   axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
+  //     .then((res) => {
+  //       if (res.data.loggedIn) {
+  //         setAuth(true);
+  //       } else {
+  //         window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app"; // back to login
+  //       }
+  //     })
+  //     .catch(() => {
+  //       window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
+  //     });
+  // }, []);
 
   if (auth === null) return <p>Loading...</p>;
   return (
