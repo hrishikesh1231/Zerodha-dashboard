@@ -8,8 +8,8 @@ import { useEffect } from "react";
 
 const Home = () => {
    const [auth, setAuth] = useState(null);
-   useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`);
+   useEffect(async()=>{
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`);
    },[])
   //  useEffect(() => {
   //   axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
