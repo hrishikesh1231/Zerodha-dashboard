@@ -24,7 +24,7 @@ const Menu = () => {
       <div className="menus">
         <ul>
           <li >
-            <Link style={{textDecoration:"none"}} to="/dashboard/"><p className={selectedMenu===0?activeMenuclass:menuclass} onClick={()=>handleMenuClick(0)}>Dashboard</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard"><p className={selectedMenu===0?activeMenuclass:menuclass} onClick={()=>handleMenuClick(0)}>Dashboard</p></Link>
           </li>
           <li>
             <Link style={{textDecoration:"none"}} to="/dashboard/orders"><p className={selectedMenu===1?activeMenuclass:menuclass} onClick={()=>handleMenuClick(1)}>Orders</p></Link>

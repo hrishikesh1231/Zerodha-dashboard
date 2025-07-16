@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
 import axios from "axios";
+import Dashboard from "./Dashboard"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL; // Backend URL
