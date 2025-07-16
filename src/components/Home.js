@@ -31,7 +31,7 @@ const Home = () => {
       });
   }, []);
 
-  if (auth === null) return <button onClick={handle}>helo</button>;
+  if (auth === null) return (<button onClick={handle}>helo{res}</button>);
   return (
     <>
       <TopBar />
