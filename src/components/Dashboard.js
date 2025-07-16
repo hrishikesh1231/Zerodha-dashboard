@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes ,useLocation} from "react-router-dom";
 
 import Apps from "./Apps";
 import Funds from "./Funds";
@@ -14,6 +14,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 import Logout from "./Logout";
 
 const Dashboard = () => {
+  const location = useLocation();
   return (
     <div className="dashboard-container">
     
@@ -22,7 +23,7 @@ const Dashboard = () => {
     </GeneralContextProvider>  
       
       <div className="content">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Summary />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
