@@ -8,7 +8,7 @@ const Orders = () => {
   const [orders,setOrders] = useState([]);
   const [name,setName] = useState();
   useEffect(()=>{
-    axios.get("http://localhost:3002/allOrders").then((res)=>{
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`).then((res)=>{
       setOrders(res.data.allOrders);
       // console.log(res); 
       setName(res.data.name);

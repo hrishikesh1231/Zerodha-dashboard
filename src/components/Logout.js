@@ -3,9 +3,9 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 const Logout = () => {
     // alert("are you sure you want to laogout");
-    axios.get('/logout').then(()=>{
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/logout`).then(()=>{
         toast.success("Logged out!");
-        window.location.href = "http://localhost:3001";
+        window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
     });
   return (
     <div>

@@ -10,7 +10,7 @@ const Holdings = () => {
   const [sum,setSum] = useState(0);
 
   useEffect(()=>{
-    axios.get("http://localhost:3002/allHoldings").then((res)=>{
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`).then((res)=>{
       // console.log(res.data);
       setAllHoldings(res.data);
     });

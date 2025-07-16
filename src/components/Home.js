@@ -9,16 +9,16 @@ import { useEffect } from "react";
 const Home = () => {
    const [auth, setAuth] = useState(null);
    useEffect(() => {
-    axios.get('http://localhost:3002/check-auth',{ withCredentials: true })
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
       .then((res) => {
         if (res.data.loggedIn) {
           setAuth(true);
         } else {
-          window.location.href = "http://localhost:3000"; // back to login
+          window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app"; // back to login
         }
       })
       .catch(() => {
-        window.location.href = "http://localhost:3000";
+        window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
       });
   }, []);
 

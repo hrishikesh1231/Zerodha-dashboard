@@ -11,7 +11,7 @@ const SellActionWindow = ({uid}) => {
     }
 
     useEffect(()=>{
-    axios.post("http://localhost:3002/sellHolding",{name:uid}).then((res)=>{
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/sellHolding`,{name:uid}).then((res)=>{
         // console.log(res);
         setSellQty(res.data.qty);
         setSellprice(res.data.price);
@@ -22,7 +22,7 @@ const SellActionWindow = ({uid}) => {
     const [sellprice,setSellprice] = useState(0);
     
     const handleSellClick=()=>{
-        axios.post('http://localhost:3002/newSellOrder',{
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/newSellOrder`,{
             name: uid,
             qty: sellQty,
             price:sellprice,
