@@ -19,7 +19,10 @@ const BuyActionWindow = ({ uid ,price}) => {
       mode: "BUY",
     });
     alert("order placed");
-    GeneralContext.closeBuyWindow();
+    setTimeout(()=>{
+      GeneralContext.closeBuyWindow();
+    },1000);
+    
   };
 
   const handleCancelClick = () => {
