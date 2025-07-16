@@ -4,15 +4,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
-// import { GeneralContext } from "./GeneralContext";
 
 import "./BuyActionWindow.css";
-import { useContext } from "react";
 
 const BuyActionWindow = ({ uid ,price}) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(price);
-  const generalCtx = useContext(GeneralContext);
 
   const handleBuyClick = async() => {
     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
@@ -21,11 +18,11 @@ const BuyActionWindow = ({ uid ,price}) => {
       price: stockPrice,
       mode: "BUY",
     });
-     generalCtx.closeBuyWindow();
+    GeneralContext.closeBuyWindow();
   };
 
   const handleCancelClick = () => {
-     generalCtx.closeBuyWindow();
+    GeneralContext.closeBuyWindow();
   };
   
 
