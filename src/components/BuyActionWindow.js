@@ -18,6 +18,7 @@ const BuyActionWindow = ({ uid ,price}) => {
       price: stockPrice,
       mode: "BUY",
     });
+    alert("order placed");
     GeneralContext.closeBuyWindow();
   };
 
