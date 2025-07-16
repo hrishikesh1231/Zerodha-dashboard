@@ -17,19 +17,40 @@ const Home = () => {
   //  useEffect(async()=>{
   //   await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`);
   //  },[])
-   useEffect(async() => {
-    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
-      .then((res) => {
-        if (res.data.loggedIn) {
-          setAuth(true);
-        } else {
-          window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app"; // back to login
-        }
-      })
-      .catch(() => {
-        window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
+  //  useEffect(async() => {
+  //   await axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`,{ withCredentials: true })
+  //     .then((res) => {
+  //       if (res.data.loggedIn) {
+  //         setAuth(true);
+  //       } else {
+  //         window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app"; // back to login
+  //       }
+  //     })
+  //     .catch(() => {
+  //       window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
+  //     });
+  // }, []);
+  useEffect(() => {
+  const checkAuth = async () => {
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/check-auth`, {
+        withCredentials: true,
       });
-  }, []);
+      console.log("/check-auth response:", res.data); // ✅ check backend response
+      if (res.data.loggedIn) {
+        setAuth(true);
+      } else {
+        window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
+      }
+    } catch (err) {
+      console.error("Auth check failed:", err);
+      window.location.href = "https://zerodha-frontend-kappa-dun.vercel.app";
+    }
+  };
+
+  checkAuth(); // call the async function
+}, []);
+
 
   if (auth === null) return <p>Loading....</p>;
   return (
