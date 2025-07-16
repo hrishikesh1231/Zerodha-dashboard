@@ -17,7 +17,7 @@ const BuyActionWindow = ({ uid ,price}) => {
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
-    });
+    })
     GeneralContext.closeBuyWindow();
   };
 
