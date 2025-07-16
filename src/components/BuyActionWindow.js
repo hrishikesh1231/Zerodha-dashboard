@@ -17,8 +17,9 @@ const BuyActionWindow = ({ uid ,price}) => {
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
-    },{ withCredentials: true });
-    GeneralContext.closeBuyWindow();
+    },{ withCredentials: true }).then(()=>{
+        GeneralContext.closeBuyWindow();
+    })  
   };
 
   const handleCancelClick = () => {
