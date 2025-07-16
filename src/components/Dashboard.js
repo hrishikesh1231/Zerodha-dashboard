@@ -9,7 +9,7 @@ import Orders from "./Orders";
 import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
-import BuyActionWindow from "./BuyActionWindow";
+// import BuyActionWindow from "./BuyActionWindow";
 import { GeneralContextProvider } from "./GeneralContext";
 import Logout from "./Logout";
 
