@@ -24,22 +24,22 @@ const Menu = () => {
       <div className="menus">
         <ul>
           <li >
-            <Link style={{textDecoration:"none"}} to="/"><p className={selectedMenu===0?activeMenuclass:menuclass} onClick={()=>handleMenuClick(0)}>Dashboard</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard/"><p className={selectedMenu===0?activeMenuclass:menuclass} onClick={()=>handleMenuClick(0)}>Dashboard</p></Link>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/orders"><p className={selectedMenu===1?activeMenuclass:menuclass} onClick={()=>handleMenuClick(1)}>Orders</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard/orders"><p className={selectedMenu===1?activeMenuclass:menuclass} onClick={()=>handleMenuClick(1)}>Orders</p></Link>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/holdings"><p className={selectedMenu===2?activeMenuclass:menuclass} onClick={()=>handleMenuClick(2)}>Holdings</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard/holdings"><p className={selectedMenu===2?activeMenuclass:menuclass} onClick={()=>handleMenuClick(2)}>Holdings</p></Link>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}}to="/positions"><p className={selectedMenu===3?activeMenuclass:menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></Link>
+            <Link style={{textDecoration:"none"}}to="/dashboard/positions"><p className={selectedMenu===3?activeMenuclass:menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></Link>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/funds"><p className={selectedMenu===4?activeMenuclass:menuclass} onClick={()=>handleMenuClick(4)}>Funds</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard/funds"><p className={selectedMenu===4?activeMenuclass:menuclass} onClick={()=>handleMenuClick(4)}>Funds</p></Link>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/apps"><p className={selectedMenu===5?activeMenuclass:menuclass} onClick={()=>handleMenuClick(5)}>Apps</p></Link>
+            <Link style={{textDecoration:"none"}} to="/dashboard/apps"><p className={selectedMenu===5?activeMenuclass:menuclass} onClick={()=>handleMenuClick(5)}>Apps</p></Link>
           </li>
         </ul>
         <hr />
