@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import axios from "axios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-axios.defaults.baseURL = 'http://localhost:3002'; // Backend URL
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL; // Backend URL
 axios.defaults.withCredentials = true; // Send session cookies
 root.render(
   <React.StrictMode>
