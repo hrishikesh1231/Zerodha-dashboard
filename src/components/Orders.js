@@ -1,4 +1,4 @@
-import { width } from "@mui/system";
+// import { width } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const Orders = () => {
     })
   },[])
   return (
-    <div className="">
+    <div >
       <div>
         <p>You orders {orders.length}:-</p>
       

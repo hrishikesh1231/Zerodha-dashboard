@@ -9,8 +9,8 @@ const Holdings = () => {
   const [allHoldings,setAllHoldings] = useState([]);
   const [sum,setSum] = useState(0);
 
-  useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`).then((res)=>{
+  useEffect(async()=>{
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`).then((res)=>{
       // console.log(res.data);
       setAllHoldings(res.data);
     });
