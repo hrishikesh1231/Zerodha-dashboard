@@ -9,11 +9,11 @@ import { useEffect } from "react";
 const Home = () => {
    const [auth, setAuth] = useState(null);
    const [res, setRes] = useState(null);
-   const handle=()=>{
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`).then((res)=>{
-      setRes(res);
-    })
-   }
+  //  const handle=()=>{
+  //   axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`).then((res)=>{
+  //     setRes(res);
+  //   })
+  //  }
   //  useEffect(async()=>{
   //   await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bhai`);
   //  },[])
@@ -31,7 +31,7 @@ const Home = () => {
       });
   }, []);
 
-  if (auth === null) return (<button onClick={handle}>helo{res}</button>);
+  if (auth === null) return <p>Loading....</p>;
   return (
     <>
       <TopBar />
