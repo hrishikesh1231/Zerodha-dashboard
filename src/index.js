@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
 import axios from "axios";
-import Dashboard from "./Dashboard"
+import Dashboard from "./components/Dashboard";
+// import Dashboard from "./Dashboard"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL; // Backend URL
@@ -14,7 +15,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Home />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/dashboard/*" element={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
