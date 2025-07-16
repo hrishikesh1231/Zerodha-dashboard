@@ -18,10 +18,7 @@ const BuyActionWindow = ({ uid ,price}) => {
       price: stockPrice,
       mode: "BUY",
     });
-    alert("order placed");
-    setTimeout(()=>{
-      GeneralContext.closeBuyWindow();
-    },1000);
+    GeneralContext.closeBuyWindow();
     
   };
 
