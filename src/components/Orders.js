@@ -7,8 +7,8 @@ import "./Order.css"
 const Orders = () => {
   const [orders,setOrders] = useState([]);
   const [name,setName] = useState();
-  useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`).then((res)=>{
+  useEffect(async()=>{
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`,{ withCredentials: true }).then((res)=>{
       setOrders(res.data.allOrders);
       // console.log(res); 
       setName(res.data.name);

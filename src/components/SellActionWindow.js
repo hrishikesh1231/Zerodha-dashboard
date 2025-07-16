@@ -10,8 +10,8 @@ const SellActionWindow = ({uid}) => {
         GeneralContext.handleCloseSellWindow();
     }
 
-    useEffect(()=>{
-    axios.post(`${process.env.REACT_APP_BACKEND_URL}/sellHolding`,{name:uid}).then((res)=>{
+    useEffect(async()=>{
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/sellHolding`,{name:uid},{ withCredentials: true }).then((res)=>{
         // console.log(res);
         setSellQty(res.data.qty);
         setSellprice(res.data.price);
@@ -21,13 +21,13 @@ const SellActionWindow = ({uid}) => {
     const [sellQty,setSellQty] = useState(0);
     const [sellprice,setSellprice] = useState(0);
     
-    const handleSellClick=()=>{
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/newSellOrder`,{
+    const handleSellClick=async()=>{
+        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newSellOrder`,{
             name: uid,
             qty: sellQty,
             price:sellprice,
             mode: "SELL",
-        });
+        },{ withCredentials: true });
         
         GeneralContext.handleCloseSellWindow();
     }

@@ -11,13 +11,13 @@ const BuyActionWindow = ({ uid ,price}) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(price);
 
-  const handleBuyClick = () => {
-    axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
+  const handleBuyClick = async() => {
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
-    });
+    },{ withCredentials: true });
     GeneralContext.closeBuyWindow();
   };
 
