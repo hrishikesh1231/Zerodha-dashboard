@@ -25,7 +25,7 @@ const Home = () => {
   //     });
   // }, []);
 
-  if (auth === null) return <p>Loading...</p>;
+  // if (auth === null) return <p>Loading...</p>;
   return (
     <>
       <TopBar />
