@@ -11,38 +11,18 @@ const BuyActionWindow = ({ uid ,price}) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(price);
 
-  // const handleBuyClick = async() => {
-  //    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
-  //     name: uid,
-  //     qty: stockQuantity,
-  //     price: stockPrice,
-  //     mode: "BUY",
-  //   });
-  //   GeneralContext.closeBuyWindow();
-    
-  // };
-  const handleBuyClick = async () => {
-  try {
-    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
+  const handleBuyClick = async() => {
+     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
     });
+    alert("Oerder placed succesfully");
+    GeneralContext.closeBuyWindow();
+    
+  };
 
-    // Optional: show success message here
-    console.log("✅ Order placed:", response.data);
-
-    // Wait 2 seconds before closing the window
-    setTimeout(() => {
-      GeneralContext.closeBuyWindow();
-    }, 1000);
-
-  } catch (error) {
-    console.error("❌ Order failed:", error);
-    alert("Order failed. Please try again.");
-  }
-};
 
 
   const handleCancelClick = () => {
