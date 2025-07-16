@@ -16,16 +16,16 @@ const WatchListAction = ({uid,price}) => {
   return (
     <div className='actions'>
       <span >
-        <Tooltip title="Buy (B)" placement='top' arrow TransisionComponen={Grow}>
+        <Tooltip title="Buy (B)" placement='top' arrow TransitionComponent={Grow}>
              <button className='buy' onClick={handleClick}>buy</button>
         </Tooltip>
-        <Tooltip title="Sell (s)" placement='top' arrow TransisionComponen={Grow}>
+        <Tooltip title="Sell (s)" placement='top' arrow TransitionComponent={Grow}>
              <button className='sell' onClick={handleSellClick}>sell</button>
         </Tooltip>
-        <Tooltip title="Analytic (A)" placement='top' arrow TransisionComponen={Grow}>
+        <Tooltip title="Analytic (A)" placement='top' arrow TransitionComponent={Grow}>
              <button className='action'><BarChartIcon className='icon'/></button>
         </Tooltip>
-        <Tooltip title="More" placement='top' arrow TransisionComponen={Grow}>
+        <Tooltip title="More" placement='top' arrow TransitionComponent={Grow}>
              <button className=''><MoreHorizIcon className='icon'/></button>
         </Tooltip>
       </span>

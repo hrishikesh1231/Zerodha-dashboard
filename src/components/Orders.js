@@ -6,10 +6,12 @@ import "./Order.css"
 
 const Orders = () => {
   const [orders,setOrders] = useState([]);
+  const [name,setName] = useState();
   useEffect(()=>{
     axios.get("http://localhost:3002/allOrders").then((res)=>{
-      setOrders(res.data);
+      setOrders(res.data.allOrders);
       // console.log(res); 
+      setName(res.data.name);
     })
   },[])
   return (
@@ -25,6 +27,7 @@ const Orders = () => {
                   <span  class="card-text">Qty :- {item.qty}</span>
                   <span class="card-text">Price :- {item.price}</span>
                   <span class="card-text">Mode :- {item.mode}</span>
+                  <span  class="card-text name text-muted">@{name}</span>
                 </div>
               </div>
             )

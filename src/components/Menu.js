@@ -45,7 +45,8 @@ const Menu = () => {
         <hr />
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <Link className="fs-2" to="/logout">
+          <h3 className="username">LOGOUT</h3></Link>
         </div>
       </div>
       

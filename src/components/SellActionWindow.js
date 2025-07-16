@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './BuyActionWindow.css'
 import { Link } from 'react-router-dom';
 import GeneralContext from './GeneralContext';
 import axios from 'axios';
 const SellActionWindow = ({uid}) => {
-    const [sellQty,setSellQty] = useState(0);
-    const [sellprice,setSellprice] = useState(0);
+    
 
     const handleCancleClick=()=>{
         GeneralContext.handleCloseSellWindow();
     }
 
+    useEffect(()=>{
     axios.post("http://localhost:3002/sellHolding",{name:uid}).then((res)=>{
-        console.log(res);
+        // console.log(res);
         setSellQty(res.data.qty);
         setSellprice(res.data.price);
-    });
+      });
+    },[]);  //useeffect imp once component change 
+    
+    const [sellQty,setSellQty] = useState(0);
+    const [sellprice,setSellprice] = useState(0);
     
     const handleSellClick=()=>{
         axios.post('http://localhost:3002/newSellOrder',{
@@ -43,7 +47,7 @@ const SellActionWindow = ({uid}) => {
               name="qty"
               id="qty"
               value={sellQty}
-              onChange={(e) => setSellQty(e.target.value)}
+              onChange={(e) => setSellQty(Number(e.target.value))}
             />
           </fieldset>
           <fieldset>
@@ -53,7 +57,7 @@ const SellActionWindow = ({uid}) => {
               name="price"
               id="price"
               step="0.05"
-              onChange={(e) => setSellprice(e.target.value)}
+              onChange={(e) => setSellprice(Number(e.target.value))}
               value={sellprice * sellQty}
             />
           </fieldset>
