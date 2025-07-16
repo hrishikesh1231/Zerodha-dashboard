@@ -11,7 +11,7 @@ const SellActionWindow = ({uid}) => {
     }
 
     useEffect(async()=>{
-    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/sellHolding`,{name:uid},{ withCredentials: true }).then((res)=>{
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/sellHolding`,{name:uid},).then((res)=>{
         // console.log(res);
         setSellQty(res.data.qty);
         setSellprice(res.data.price);
