@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
+// import {  } from 'react-router-dom';
+
 
 const Menu = () => {
 
+  const location = useLocation();
+  const path = location.pathname;
+  
   const [selectedMenu,setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen,setIsProfileDropdownOpen] = useState(false);
 
@@ -24,13 +29,13 @@ const Menu = () => {
       <div className="menus">
         <ul>
           <li >
-            <a href="/" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(0)}><p className={selectedMenu===0?activeMenuclass:menuclass} >Dashboard</p></a>
+            <a href="/" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(0)}><p className={path === '/' ? activeMenuclass : menuclass} >Dashboard</p></a>
           </li>
           <li>
-            <a href="/orders" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(1)}><p className={selectedMenu===1?activeMenuclass:menuclass} >Orders</p></a>
+            <a href="/orders" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(1)}><p className={path === '/orders' ? activeMenuclass : menuclass} >Orders</p></a>
           </li>
           <li>
-            <a href="/holdings" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(2)} ><p className={selectedMenu===2?activeMenuclass:menuclass} >Holdings</p></a>
+            <a href="/holdings" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(2)} ><p className={path === '/holdings' ? activeMenuclass : menuclass} >Holdings</p></a>
           </li>
           <li>
             <Link style={{textDecoration:"none"}}to="/positions" onClick={()=>handleMenuClick(3)}><p className={selectedMenu===3?activeMenuclass:menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></Link>
