@@ -24,13 +24,13 @@ const Menu = () => {
       <div className="menus">
         <ul>
           <li >
-            <a href="/" style={{textDecoration:"none"}} ><p className={selectedMenu===0?activeMenuclass:menuclass} onClick={()=>handleMenuClick(0)}>Dashboard</p></a>
+            <a href="/" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(0)}><p className={selectedMenu===0?activeMenuclass:menuclass} >Dashboard</p></a>
           </li>
           <li>
-            <a href="/orders" style={{textDecoration:"none"}} ><p className={selectedMenu===1?activeMenuclass:menuclass} onClick={()=>handleMenuClick(1)}>Orders</p></a>
+            <a href="/orders" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(1)}><p className={selectedMenu===1?activeMenuclass:menuclass} >Orders</p></a>
           </li>
           <li>
-            <a href="/holdings" style={{textDecoration:"none"}}  ><p className={selectedMenu===2?activeMenuclass:menuclass} onClick={()=>handleMenuClick(2)}>Holdings</p></a>
+            <a href="/holdings" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(2)} ><p className={selectedMenu===2?activeMenuclass:menuclass} >Holdings</p></a>
           </li>
           <li>
             <Link style={{textDecoration:"none"}}to="/positions" onClick={()=>handleMenuClick(3)}><p className={selectedMenu===3?activeMenuclass:menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></Link>
