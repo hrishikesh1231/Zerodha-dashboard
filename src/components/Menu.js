@@ -38,13 +38,13 @@ const Menu = () => {
             <a href="/holdings" style={{textDecoration:"none"}} onClick={()=>handleMenuClick(2)} ><p className={path === '/holdings' ? activeMenuclass : menuclass} >Holdings</p></a>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}}to="/positions" onClick={()=>handleMenuClick(3)}><p className={selectedMenu===3?activeMenuclass:menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></Link>
+            <a style={{textDecoration:"none"}} href="/positions" onClick={()=>handleMenuClick(3)}><p className={path === '/positions' ? activeMenuclass : menuclass} onClick={()=>handleMenuClick(3)}>Positions</p></a>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/funds"><p className={selectedMenu===4?activeMenuclass:menuclass} onClick={()=>handleMenuClick(4)}>Funds</p></Link>
+            <a style={{textDecoration:"none"}}  href="/funds"><p className={path === '/funds' ? activeMenuclass : menuclass} onClick={()=>handleMenuClick(4)}>Funds</p></a>
           </li>
           <li>
-            <Link style={{textDecoration:"none"}} to="/apps"><p className={selectedMenu===5?activeMenuclass:menuclass} onClick={()=>handleMenuClick(5)}>Apps</p></Link>
+            <a style={{textDecoration:"none"}}  href="/apps"><p className={path === '/apps' ? activeMenuclass : menuclass} onClick={()=>handleMenuClick(5)}>Apps</p></a>
           </li>
         </ul>
         <hr />
